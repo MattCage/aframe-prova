@@ -16,11 +16,15 @@
   
     <!-- Tag che prepara la "scena", un canvas pre-configurato per WebVR -->
     <a-scene>
+      <!-- Plane che serve da terreno (ruotato sull'asse X per avere la faccia a favore di camera) -->
       <a-plane src="#textureTerreno" rotation="-90 0 0" width="30" height="30" repeat="10 10"></a-plane>
       <!-- Un cubo colorato, posizionato davanti la camera -->
       <a-box src="#textureCubo" position="0 2 -5" rotation="0 45 45" scale="2 2 2"></a-box>
+      
       <!-- Cielo (è una sfera a normali invertite con materiale) -->
       <a-sky src="#textureCielo"></a-sky>
+      
+      <a-light type="ambient" color="#445451"></a-light>
     </a-scene>
     
   </body>
