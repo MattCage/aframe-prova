@@ -20,15 +20,16 @@
       });
     </script>
   
-    <!-- Asset Manager, permette di precaricare nella chache del browser asset come immagini, video o altro da usare in scena -->
-    <a-assets>
-      <img id="textureCubo" src="https://i.imgur.com/mYmmbrp.jpg" />
-      <img id="textureCielo" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg" />
-      <img id="textureTerreno" src="https://cdn.aframe.io/a-painter/images/floor.jpg" />
-    </a-assets> 
-  
     <!-- Tag che prepara la "scena", un canvas pre-configurato per WebVR -->
     <a-scene>
+     
+      <!-- Asset Manager, permette di precaricare nella cache del browser asset come immagini, video o altro da usare in scena. ATTENZIONE: Va appeso alla scena, funziona anche se esterno alla scena ma la console poi piange -->
+      <a-assets>
+        <img id="textureCubo" src="https://i.imgur.com/mYmmbrp.jpg" />
+        <img id="textureCielo" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg" />
+        <img id="textureTerreno" src="https://cdn.aframe.io/a-painter/images/floor.jpg" />
+      </a-assets> 
+     
       <!-- Plane che serve da terreno (ruotato sull'asse X per avere la faccia a favore di camera) -->
       <a-plane src="#textureTerreno" rotation="-90 0 0" width="30" height="30" repeat="10 10"></a-plane>
       <!-- Un cubo colorato, posizionato davanti la camera -->
