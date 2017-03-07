@@ -6,19 +6,6 @@
   </head>
 
   <body>
-    
-    <script>
-      var cubo = document.getElementById('cubo');
-
-      cubo.addEventListener( 'mouseenter', function() {
-        console.log("Sto guardando il cubo");
-        cubo.setAttribute( 'scale', {
-          x: 3,
-          y: 3,
-          z: 3
-        });
-      });
-    </script>
   
     <!-- Tag che prepara la "scena", un canvas pre-configurato per WebVR -->
     <a-scene>
@@ -48,6 +35,19 @@
       </a-camera>
       
     </a-scene>
+       
+    <script>
+      var cubo = document.getElementById('cubo');
+
+      cubo.addEventListener( 'mouseenter', function() {
+        console.log("Sto guardando il cubo");
+        cubo.setAttribute( 'scale', {
+          x: 3,
+          y: 3,
+          z: 3
+        });
+      });
+    </script>
         
   </body>
 
