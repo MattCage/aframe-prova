@@ -8,7 +8,7 @@
   <body>
     
     <script>
-      var cubo = document.querySelector('a-box');
+      var cubo = document.getElementById('cubo');
 
       cubo.addEventListener( 'mouseenter', function() {
         console.log("Sto guardando il cubo");
@@ -33,7 +33,7 @@
       <!-- Plane che serve da terreno (ruotato sull'asse X per avere la faccia a favore di camera) -->
       <a-plane src="#textureTerreno" rotation="-90 0 0" width="30" height="30" repeat="10 10"></a-plane>
       <!-- Un cubo colorato, posizionato davanti la camera -->
-      <a-box src="#textureCubo" position="0 2 -5" rotation="0 45 45" scale="2 2 2">
+      <a-box id="cubo" src="#textureCubo" position="0 2 -5" rotation="0 45 45" scale="2 2 2">
         <a-animation attribute="position" to="0 2.2 -5" direction="alternate" dur="2000" repeat="indefinite"></a-animation>
       </a-box>
       
