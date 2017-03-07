@@ -7,7 +7,17 @@
 
   <body>
     
-    <script src="js/animation.js"></script>
+    <script>
+      var cubo = document.querySelector('a-box');
+
+      cubo.addEventListener( 'mouseenter', function() {
+        cubo.setAttribute( 'scale', {
+          x: 2,
+          y: 2,
+          z: 2
+        });
+      });
+    </script>
   
     <!-- Asset Manager, permette di precaricare nella chache del browser asset come immagini, video o altro da usare in scena -->
     <a-assets>
