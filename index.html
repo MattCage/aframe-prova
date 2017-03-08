@@ -23,6 +23,9 @@
       <!-- Un cubo colorato, posizionato davanti la camera -->
       <a-box id="cubo" src="#textureCubo" position="0 2 -5" rotation="0 45 45" scale="2 2 2" scale-on-mouseenter="to: 2.2 2.2 2.2">
         <a-animation attribute="position" to="0 2.2 -5" direction="alternate" dur="2000" repeat="indefinite"></a-animation>
+        <a-animation attribute="scale" begin="mouseenter" dur="300" to="2.3 2.3 2.3"></a-animation>
+        <a-animation attribute="scale" begin="mouseleave" dur="300" to="2 2 2"></a-animation>
+        <a-animation attribute="rotation" begin="click" dur="2000" to="360 405 45"></a-animation>
       </a-box>
       
       <!-- Cielo (è una sfera a normali invertite con materiale) -->
@@ -40,7 +43,7 @@
     </a-scene>
     
     <!-- Per comodità in dev i Component possono essere scritti in testa al body ma per rimanere fedeli dalle norme HTML5 lo pongo in fondo al body, almeno sono certo che la scena funzioni (ed è modulare, essendo un component, e molto più controllabile) -->
-    <script src="js/cubeScale.acomponent.js"></script>
+    <!-- <script src="js/cubeScale.acomponent.js"></script> -->
     
     <!-- JS scritto come da norme dopo l'HTML, ma per una scena VR è lento e incontrollabile -->   
     <!-- <script src="js/animation.js"></script> -->
