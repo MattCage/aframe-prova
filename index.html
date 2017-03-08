@@ -15,11 +15,12 @@
         init: function() {
           console.log("Sto guardando il cubo");
           var data = this.data;
+          var originalScale = this.el.scale.data;
           this.el.addEventListener( 'mouseenter', function() {
             this.setAttribute( 'scale', data.to );
           });
           this.el.addEventListener( 'mouseleave', function() {
-            this.setAttribute( 'scale', this.el.scale.data );
+            this.setAttribute( 'scale', originalScale );
           });
         }
       });
