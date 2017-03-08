@@ -1,4 +1,4 @@
-var cubo = document.getElementById('cubo');
+var cubo = document.querySelector('a-box');
 
 cubo.addEventListener( 'mouseenter', function() {
   console.log("Sto guardando il cubo");
