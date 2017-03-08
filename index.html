@@ -7,21 +7,6 @@
 
   <body>
   
-    <script>
-      AFRAME.registerComponent( 'scale-on-mouseenter', {
-        schema: {
-          to: {default: '2.5 2.5 2.5'}
-        },
-        init: function() {
-          console.log("Sto guardando il cubo");
-          var data = this.data;
-          this.el.addEventListener( 'mouseenter', function() {
-            this.setAttribute( 'scale', data.to );
-          });
-        }
-      });
-    </script>
-  
     <!-- Tag che prepara la "scena", un canvas pre-configurato per WebVR -->
     <a-scene>
      
@@ -50,6 +35,21 @@
       </a-camera>
       
     </a-scene>
+    
+    <script>
+      AFRAME.registerComponent( 'scale-on-mouseenter', {
+        schema: {
+          to: {default: '2.5 2.5 2.5'}
+        },
+        init: function() {
+          console.log("Sto guardando il cubo");
+          var data = this.data;
+          this.el.addEventListener( 'mouseenter', function() {
+            this.setAttribute( 'scale', data.to );
+          });
+        }
+      });
+    </script>
     
     <!-- JS scritto come da norme dopo l'HTML, ma per una scena VR è lento e incontrollabile -->   
     <!-- <script src="js/animation.js"></script> -->
