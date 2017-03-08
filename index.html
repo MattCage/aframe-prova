@@ -13,6 +13,7 @@
           to: {default: '2.5 2.5 2.5'}
         },
         init: function() {
+          console.log("Sto guardando il cubo");
           var data = this.data;
           this.el.addEventListener( 'mouseenter', function() {
             this.setAttribute( 'scale', data.to );
