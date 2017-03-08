@@ -3,9 +3,9 @@ var cubo = document.getElementById('cubo');
 cubo.addEventListener( 'mouseenter', function() {
   console.log("Sto guardando il cubo");
   cubo.setAttribute( 'scale', {
-    x: 3,
-    y: 3,
-    z: 3
+    x: 2.2,
+    y: 2.2,
+    z: 2.2
   });
 });
 
