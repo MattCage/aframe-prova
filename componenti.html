@@ -35,9 +35,9 @@
       <a-sky id="image360" radius="10" src="#cityPhoto"></a-sky>
       
       <a-entity position="-2 0 -5" layout="layout: line; margin: 2">
-        <a-entity template="src: #plane" data-thumb="#cityThumb"></a-entity>
-        <a-entity template="src: #plane" data-thumb="#cubesThumb"></a-entity>
-        <a-entity template="src: #plane" data-thumb="#secheltThumb"></a-entity>
+        <a-entity template="src: #plane" data-thumb="#cityThumb" image-set="on: click; target: #image360; src: #cityPhoto"></a-entity>
+        <a-entity template="src: #plane" data-thumb="#cubesThumb" image-set="on: click; target: #image360; src: #cubesPhoto"></a-entity>
+        <a-entity template="src: #plane" data-thumb="#secheltThumb" image-set="on: click; target: #image360; src: #secheltPhoto"></a-entity>
       </a-entity>
       
       <a-camera>
