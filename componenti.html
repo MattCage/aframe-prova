@@ -29,9 +29,11 @@
       <!-- Creo una Skybox che ha come materiale la prima foto, farà da "visualizzatore" -->
       <a-sky id="image360" radius="10" src="#cityPhoto"></a-sky>
       
-      <a-entity position="-5 0 -5" template="src: #plane" data-thumb="#cityThumb"></a-entity>
-      <a-entity position="0 0 -5" template="src: #plane" data-thumb="#cubesThumb"></a-entity>
-      <a-entity position="5 0 -5" template="src: #plane" data-thumb="#secheltThumb"></a-entity>
+      <a-entity position="-4 0 -5" layout="layout: line; margin: 2">
+        <a-entity template="src: #plane" data-thumb="#cityThumb"></a-entity>
+        <a-entity template="src: #plane" data-thumb="#cubesThumb"></a-entity>
+        <a-entity template="src: #plane" data-thumb="#secheltThumb"></a-entity>
+      </a-entity>
       
       <a-camera>
         <a-cursor id="cursor">
