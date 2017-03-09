@@ -20,7 +20,10 @@
       <!-- Creo una Skybox che ha come materiale la prima foto, farà da "visualizzatore" -->
       <a-sky id="image360" radius="10" src="#cityPhoto"></a-sky>
       
-      <a-entity class="link"></a-entity>
+      <a-entity class="link"
+        geometry="primitive: plane; width: 1; height: 1"
+        material="shader: flat; src: #cubesThumb"
+        sound="on: click; src: #clickSound"></a-entity>
       
       <a-camera>
         <a-cursor id="cursor">
