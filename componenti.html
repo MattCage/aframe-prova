@@ -3,6 +3,9 @@
   <head>
     <title>Costruire con i Componenti</title>
     <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-template-component"></script>
+    <script src="https://unpkg.com/aframe-layout-component"></script>
+    <script src="https://unpkg.com/aframe-event-set-component"></script>
   </head>
   <body>
     <a-scene>
@@ -15,16 +18,20 @@
         <img id="cubesThumb" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-cubes.png">
         <img id="secheltPhoto" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg">
         <img id="secheltThumb" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-sechelt.png">
+        <script id="plane" type="text/html">
+          <a-entity class="link"
+            geometry="primitive: plane; width: 1; height: 1"
+            material="shader: flat; src: ${thumb}"
+            sound="on: click; src: #clickSound"></a-entity>
+        </script>
       </a-assets>
       
       <!-- Creo una Skybox che ha come materiale la prima foto, farà da "visualizzatore" -->
       <a-sky id="image360" radius="10" src="#cityPhoto"></a-sky>
       
-      <a-entity class="link"
-        position="0 0 -5"      
-        geometry="primitive: plane; width: 1; height: 1"
-        material="shader: flat; src: #cubesThumb"
-        sound="on: click; src: #clickSound"></a-entity>
+      <a-entity position="-5 0 -5" template="src: #plane" data-thumb="#cityThumb"></a-entity>
+      <a-entity position="0 0 -5" template="src: #plane" data-thumb="#cubesThumb"></a-entity>
+      <a-entity position="5 0 -5" template="src: #plane" data-thumb="#secheltThumb"></a-entity>
       
       <a-camera>
         <a-cursor id="cursor">
