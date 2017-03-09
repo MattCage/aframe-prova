@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Costruire con i Componenti</title>
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      
+      <a-assets>
+        <audio id="clickSound" src="audio/click.ogg"></audio>
+        <img id="cityPhoto" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg">
+        <img id="cityThumb" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-city.png">
+        <img id="cubesPhoto" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/cubes.jpg">
+        <img id="cubesThumb" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-cubes.png">
+        <img id="secheltPhoto" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg">
+        <img id="secheltThumb" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-sechelt.png">
+      </a-assets>
+      
+      <!-- Creo una Skybox che ha come materiale la prima foto, farà da "visualizzatore" -->
+      <a-sky id="image360" radius="10" src="#cityPhoto"></a-sky>
+      
+      <a-entity class="link"></a-entity>
+      
+      <a-camera>
+        <a-cursor id="cursor">
+          <a-animation begin="click" easing="ease-in" attribute="scale" fill="backwards" from="0.1 0.1 0.1" to="1 1 1" dur="150"></a-animation>
+          <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" from="1 1 1" to="0.1 0.1 0.1" dur="1500"></a-animation>
+        </a-cursor>
+      </a-camera>
+      
+    </a-scene>
+  </body>
+</html>
