@@ -19,6 +19,20 @@ AFRAME.registerComponent( 'image-set', {
     }); 
   },
   setupFadeAnimation: function() {
+    var data = this.data;
+    var targetEl = this.data.target;
+    
+    if( targetEl.dataset.setImageFadeSetup ) return;
+    targetEl.dataset.setImageFadeSetup = true;
+    
+    targetEl.setAttribute( 'animation__fade', {
+      property: 'material.color',
+      startEvents: 'set-image-fade',
+      dir: 'alternate',
+      dur: data.dur,
+      from: '#FFF',
+      to: '#000'
+    });
     
   }
 });
