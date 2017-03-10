@@ -1,7 +1,11 @@
 AFRAME.registerComponent( 'log', {
-  schema: {type: 'string'},
+  schema: {
+    message: {
+      type: 'string',
+      default: 'Hello, World!'
+    }
+  },
   init: function() {
-    var stringaDaLoggare = this.data;
-    console.log(stringaDaLoggare);
+    console.log(this.data.message);
   }
 });
