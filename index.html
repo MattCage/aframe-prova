@@ -37,19 +37,20 @@
         </script>        
       </a-assets> 
       
-      <a-sky id="image360" radius="10" src="#cityPhoto"></a-sky>
+      <a-sky id="image360" radius="20" src="#cityPhoto"></a-sky>
      
       <!-- Plane che serve da terreno (ruotato sull'asse X per avere la faccia a favore di camera) -->
-      <a-plane src="#textureTerreno" rotation="-90 0 0" width="30" height="30" repeat="10 10"></a-plane>
+      <!-- <a-plane src="#textureTerreno" rotation="-90 0 0" width="30" height="30" repeat="10 10"></a-plane> -->
       <!-- Un cubo colorato, posizionato davanti la camera -->
-      <a-box id="cubo" src="#textureCubo" position="0 2 -5" rotation="0 45 45" scale="2 2 2" scale-on-mouseenter="to: 2.2 2.2 2.2">
+      <!--<a-box id="box" src="#textureCubo" position="0 2 -5" rotation="0 45 45" scale="2 2 2" scale-on-mouseenter="to: 2.2 2.2 2.2">
         <a-animation attribute="position" to="0 2.2 -5" direction="alternate" dur="2000" repeat="indefinite"></a-animation>
         <a-animation attribute="scale" begin="mouseenter" dur="300" to="2.3 2.3 2.3"></a-animation>
         <a-animation attribute="scale" begin="mouseleave" dur="300" to="2 2 2"></a-animation>
         <a-animation attribute="rotation" begin="click" dur="2000" to="360 405 45"></a-animation>
-      </a-box>
+      </a-box> -->
       
       <a-entity position="-2 2 -5" layout="layout: circle; radius: 5">
+        <a-entity template="src: #cubo" data-thumb="#textureCubo"></a-entity>
         <a-entity template="src: #cubo" data-thumb="#cityThumb" image-set="on: click; target: #image360; src: #cityPhoto"></a-entity>
         <a-entity template="src: #cubo" data-thumb="#cubesThumb" image-set="on: click; target: #image360; src: #cubesPhoto"></a-entity>
         <a-entity template="src: #cubo" data-thumb="#secheltThumb" image-set="on: click; target: #image360; src: #secheltPhoto"></a-entity>
