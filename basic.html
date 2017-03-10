@@ -2,11 +2,7 @@
 <html>
  
   <head>
-    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
-    <script src="https://unpkg.com/aframe-layout-component@4.0.2/dist/aframe-layout-component.min.js"></script>
-    <script src="https://unpkg.com/aframe-event-set-component@^3.0.0/dist/aframe-event-set-component.min.js"></script>
-    <script src="js/aframe-image-set-component.js"></script> 
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>    
   </head>
 
   <body>
@@ -16,25 +12,10 @@
      
       <!-- Asset Manager, permette di precaricare nella cache del browser asset come immagini, video o altro da usare in scena. ATTENZIONE: Va appeso alla scena, funziona anche se esterno alla scena ma la console poi piange -->
       <a-assets>
-        <audio src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav" autoplay preload></audio>
         <img id="textureCubo" src="https://i.imgur.com/mYmmbrp.jpg" />
+        <img id="textureCielo" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg" />
         <img id="textureTerreno" src="https://cdn.aframe.io/a-painter/images/floor.jpg" />
-        <img id="cityPhoto" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg">
-        <img id="cityThumb" src="img/cityThumb.png">
-        <img id="cubesPhoto" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/cubes.jpg">
-        <img id="cubesThumb" src="img/cubesThumb.png">
-        <img id="secheltPhoto" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg">
-        <img id="secheltThumb" src="img/secheltThumb.png">
-        <script id="cubo" type="text/html">
-          <a-entity class="link"
-            geometry="primitive: box;"
-            material="shader: flat; src: ${thumb}"
-            sound="on: click; src: #clickSound"
-            event-set__1="_event: mousedown; scale: 1 1 1"
-            event-set__2="_event: mouseup; scale: 1.2 1.2 1"
-            event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
-            event-set__4="_event: mouseleave; scale: 1 1 1"></a-entity>
-        </script>        
+        <audio src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav" autoplay preload></audio>
       </a-assets> 
      
       <!-- Plane che serve da terreno (ruotato sull'asse X per avere la faccia a favore di camera) -->
@@ -46,12 +27,6 @@
         <a-animation attribute="scale" begin="mouseleave" dur="300" to="2 2 2"></a-animation>
         <a-animation attribute="rotation" begin="click" dur="2000" to="360 405 45"></a-animation>
       </a-box>
-      
-      <a-entity position="-2 0 -5" layout="layout: circle; radius: 5">
-        <a-entity template="src: #cubo" data-thumb="#cityThumb" image-set="on: click; target: #image360; src: #cityPhoto"></a-entity>
-        <a-entity template="src: #cubo" data-thumb="#cubesThumb" image-set="on: click; target: #image360; src: #cubesPhoto"></a-entity>
-        <a-entity template="src: #cubo" data-thumb="#secheltThumb" image-set="on: click; target: #image360; src: #secheltPhoto"></a-entity>
-      </a-entity>
       
       <!-- Cielo (è una sfera a normali invertite con materiale) -->
       <a-sky src="#textureCielo"></a-sky>
