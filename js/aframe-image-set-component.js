@@ -22,7 +22,7 @@ AFRAME.registerComponent( 'image-set', {
     var data = this.data;
     var targetEl = this.data.target;
     
-    if( targetEl.dataset.setImageFadeSetup ) return;
+    if( targetEl.dataset.setImageFadeSetup ) {return};
     targetEl.dataset.setImageFadeSetup = true;
     
     targetEl.setAttribute( 'animation__fade', {
