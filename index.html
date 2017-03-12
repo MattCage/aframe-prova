@@ -6,7 +6,11 @@
     <script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
     <script src="https://unpkg.com/aframe-layout-component@4.0.2/dist/aframe-layout-component.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@^3.0.0/dist/aframe-event-set-component.min.js"></script>
-    <script src="js/aframe-image-set-component.js"></script> 
+    <script src="js/aframe-image-set-component.js"></script>
+    <script src="https://unpkg.com/aframe-click-drag-component"></script>
+    <script>
+      registerAframeClickDragComponent(window.AFRAME);
+    </script> 
   </head>
 
   <body>
@@ -50,7 +54,7 @@
       </a-box> -->
       
       <a-entity position="0 1 0" rotation="0 135 0" layout="type: circle; radius: 5">
-        <a-entity template="src: #cubo" data-thumb="#textureCubo"></a-entity>
+        <a-entity click-drag template="src: #cubo" data-thumb="#textureCubo"></a-entity>
         <a-entity template="src: #cubo" data-thumb="#cityThumb" image-set="on: click; target: #image360; src: #cityPhoto"></a-entity>
         <a-entity template="src: #cubo" data-thumb="#cubesThumb" image-set="on: click; target: #image360; src: #cubesPhoto"></a-entity>
         <a-entity template="src: #cubo" data-thumb="#secheltThumb" image-set="on: click; target: #image360; src: #secheltPhoto"></a-entity>
