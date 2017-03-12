@@ -70,7 +70,7 @@
         <a-entity></a-entity>
       </a-entity>
       
-      <a-entity geometry="plane" position="0 4 -8" material="shader: html; target: #target">
+      <a-entity geometry="plane" position="0 4 -8" material="shader: html; target: #target"></a-entity>
       
       <a-light type="ambient" color="#445451"></a-light>
       <a-light type="point" intensity="2" position="2 4 4"></a-light>
@@ -86,7 +86,8 @@
       
     </a-scene>
     
-      <iframe id="target" src="http://www.google.it"></iframe>
+    <iframe id="target" src="http://www.google.it"></iframe>
+    
     
     <!-- Per comodità in dev i Component possono essere scritti in testa al body ma per rimanere fedeli dalle norme HTML5 lo pongo in fondo al body, almeno sono certo che la scena funzioni (ed è modulare, essendo un component, e molto più controllabile) -->
     <!-- <script src="js/cubeScale.acomponent.js"></script> -->
