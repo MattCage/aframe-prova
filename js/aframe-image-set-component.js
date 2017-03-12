@@ -1,47 +1,31 @@
-/* global AFRAME */
-
-/**
- * Component that listens to an event, fades out an entity, swaps the texture, and fades it
- * back in.
- */
-AFRAME.registerComponent('image-set', {
+AFRAME.registerComponent( 'image-set', {
   schema: {
     on: {type: 'string'},
     target: {type: 'selector'},
     src: {type: 'string'},
     dur: {type: 'number', default: 300}
   },
-
-  init: function () {
+  init: function() {
     var data = this.data;
     var el = this.el;
-
+    
     this.setupFadeAnimation();
-
-    el.addEventListener(data.on, function () {
-      // Fade out image.
+    
+    el.addEventListener(data.on, function() {
       data.target.emit('set-image-fade');
-      // Wait for fade to complete.
-      setTimeout(function () {
-        // Set image.
-        data.target.setAttribute('material', 'src', data.src);
-      }, data.dur);
-    });
+      setTimeout( function() {
+        data.target.setAttribute( 'material', 'src', data.src );
+      }, data.dur );
+    }); 
   },
-
-  /**
-   * Setup fade-in + fade-out.
-   */
-  setupFadeAnimation: function () {
+  setupFadeAnimation: function() {
     var data = this.data;
     var targetEl = this.data.target;
-
-    // Only set up once.
-    if (targetEl.dataset.setImageFadeSetup) { return; }
-    targetEl.dataset.setImageFadeSetup = true;
-
-    // Create animation.
-    targetEl.setAttribute('animation__fade', {
+    
+    //f( targetEl.dataset.setImageFadeSetup ) {return;}
+    //targetEl.dataset.setImageFadeSetup = true;
+    
+    targetEl.setAttribute( 'animation__fade', {
       property: 'material.color',
       startEvents: 'set-image-fade',
       dir: 'alternate',
@@ -49,5 +33,6 @@ AFRAME.registerComponent('image-set', {
       from: '#FFF',
       to: '#000'
     });
+    
   }
 });
