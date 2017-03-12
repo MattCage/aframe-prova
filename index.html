@@ -8,6 +8,8 @@
     <script src="https://unpkg.com/aframe-event-set-component@^3.0.0/dist/aframe-event-set-component.min.js"></script>
     <script src="js/aframe-image-set-component.js"></script>
     <script src="https://unpkg.com/aframe-click-drag-component"></script>
+    <script src="https://rawgit.com/mayognaise/aframe-html-shader/master/dist/aframe-html-shader.min.js"></script>
+
     <script>
       window.aframeDraggableComponent(window.AFRAME);
     </script> 
@@ -68,6 +70,8 @@
         <a-entity></a-entity>
       </a-entity>
       
+      <a-entity geometry="plane" position="0 4 -8" material="shader: html; target: #target">
+      
       <a-light type="ambient" color="#445451"></a-light>
       <a-light type="point" intensity="2" position="2 4 4"></a-light>
       
@@ -81,6 +85,8 @@
       </a-camera>
       
     </a-scene>
+    
+      <iframe id="target" src="http://www.google.it"></iframe>
     
     <!-- Per comodità in dev i Component possono essere scritti in testa al body ma per rimanere fedeli dalle norme HTML5 lo pongo in fondo al body, almeno sono certo che la scena funzioni (ed è modulare, essendo un component, e molto più controllabile) -->
     <!-- <script src="js/cubeScale.acomponent.js"></script> -->
