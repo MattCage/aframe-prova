@@ -1,6 +1,5 @@
 <!doctype html>
-<html>
- 
+<html> 
   <head>
     <link rel="stylesheet" type="text/css" src="css/style.css">
     <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
@@ -10,7 +9,6 @@
     <script src="js/aframe-image-set-component.js"></script>
     <!-- <script src="https://unpkg.com/aframe-click-drag-component"></script> -->
     <script src="https://rawgit.com/mayognaise/aframe-html-shader/master/dist/aframe-html-shader.min.js"></script>
-
     <!-- <script>
       window.aframeDraggableComponent(window.AFRAME);
     </script> --> 
@@ -45,16 +43,6 @@
       </a-assets> 
       
       <a-sky id="image360" radius="20" src="#cityPhoto"></a-sky>
-     
-      <!-- Plane che serve da terreno (ruotato sull'asse X per avere la faccia a favore di camera) -->
-      <!-- <a-plane src="#textureTerreno" rotation="-90 0 0" width="30" height="30" repeat="10 10"></a-plane> -->
-      <!-- Un cubo colorato, posizionato davanti la camera -->
-      <!--<a-box id="box" src="#textureCubo" position="0 2 -5" rotation="0 45 45" scale="2 2 2" scale-on-mouseenter="to: 2.2 2.2 2.2">
-        <a-animation attribute="position" to="0 2.2 -5" direction="alternate" dur="2000" repeat="indefinite"></a-animation>
-        <a-animation attribute="scale" begin="mouseenter" dur="300" to="2.3 2.3 2.3"></a-animation>
-        <a-animation attribute="scale" begin="mouseleave" dur="300" to="2 2 2"></a-animation>
-        <a-animation attribute="rotation" begin="click" dur="2000" to="360 405 45"></a-animation>
-      </a-box> -->
       
       <a-entity position="0 1 0" rotation="0 135 0" layout="type: circle; radius: 5">
         <a-entity template="src: #cubo" data-thumb="#textureCubo"></a-entity>
