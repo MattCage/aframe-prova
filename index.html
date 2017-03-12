@@ -72,7 +72,7 @@
       </a-entity>
       
       <a-entity geometry="primitive: plane; width: 2; height: 2;" position="0 6 -7" material="shader: html; target: #target"></a-entity>
-      <a-entity geometry="primitive: plane; width: 2; height: 2;" position="0 2 -7" material="shader: html; target: #testo; ratio: width;"></a-entity>
+      <a-entity geometry="primitive: plane; width: 2; height: 2;" position="0 2 -7" material="shader: html; target: #container; ratio: width;"></a-entity>
       
       <a-light type="ambient" color="#445451"></a-light>
       <a-light type="point" intensity="2" position="2 4 4"></a-light>
@@ -90,9 +90,12 @@
     
     <iframe id="target" src="http://www.google.it"></iframe>
     
-    <div id="testo">
-      <h1>Titolo di prova</h1>
+    <div id="container">
+      <div id="testo">
+        <h1>Titolo di prova</h1>
+      </div>
     </div>
+     
     
     
     <!-- Per comodità in dev i Component possono essere scritti in testa al body ma per rimanere fedeli dalle norme HTML5 lo pongo in fondo al body, almeno sono certo che la scena funzioni (ed è modulare, essendo un component, e molto più controllabile) -->
