@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Untitled Document</title>
+    <title>Report di valutazione A-Frame</title>
     <!-- Bootstrap -->
     <link href="../css/bootstrap.css" rel="stylesheet">
-
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -19,45 +18,52 @@
   
     <div class="container">
       <div class="row">
+        <header class="col-xs-12">
+          <h1>Report di valutazione A-Frame</h1>
+        </header>
         <div class="col-xs-12">
-          <header>
-            <h1>Report di valutazione A-Frame</h1>
-          </header>
           <p>In questo report scriverò i risultati della mia analisi di A-Frame, dalla quale ho anche sviluppato una piccola tech demo su http://mattcage.github.io/aframe-prova.</p>
           <p>Si può visualizzare o embeddare pagine o widget web?<br>Più no che sì, nel senso che:</p>
           <ul>
-            <li>Non è possibile aggiungere in scena VR una pagina web funzionante ed interattiva</li>
-            <li>Non è possibile inserire direttamente in scena link ipertestuali</li>
+            <li><strong>Non è possibile aggiungere in scena VR una pagina web</strong> funzionante ed interattiva</li>
+            <li><strong>Non è possibile inserire link ipertestuali</strong> direttamente in scena</li>
             <li>Dipendentemente dalle direttive X-Frame è possibile o meno richiamare del tutto una pagina web</li>
             <li>E' possibile costruire del HTML custom da mostrare in scena come texture flat di una primitiva</li>
-            <li>Se un widget è cross-site (ad esempio i widget di Facebook o Twitter) è molto probabile non funzionino per i motivi di cui sopra</li>
+            <li>Se un widget è cross-site (ad esempio i widget di Facebook o Twitter) è molto probabile non funzioni per i motivi di cui sopra</li>
           </ul>
         </div>
-        <div class="col-xs-12 col-sm-6">
-          <h2>Pro</h2>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 bg-success">
+          <h2 class="text-success">Pro</h2>
           <ul>
-            <li>Prototipazione rapida, di fatto propone un codice HTML astratto per permettere di costruire velocemente scene anche complesse con pochi tag HTML</li>
+            <li>Prototipazione rapida, propone un codice HTML astratto per permettere di costruire velocemente scene anche complesse</li>
             <li>Supporta teoricamente tutti gli headset e i controller di Vive e Oculus Touch</li>
             <li>Architettura Entità-Componente molto simile a quella di Unity</li>
             <li>Espandibile potenzialmente a infinito grazie all'API DOM JavaScript (e three.js)</li>
           </ul>
         </div>
-        <div class="col-xs-12 col-sm-6">
-          <h2>Contro</h2>
+        <div class="col-xs-12 col-sm-6 bg-danger">
+          <h2 class="text-danger">Contro</h2>
           <ul>
             <li>Ha pochi componenti di default</li>
-            <li>Bisogna dipendere dalla community di sviluppatori o scriversi da sè componenti custom</li>
-            <li>Libreria giovane, ha gravi lacune come l'impossibilità in inserire pagine web funzionanti in scena</li>
+            <li>Spesso bisogna dipendere dalla community dev o scriversi da sè componenti custom</li>
+            <li>Libreria giovane, ha grosse lacune come l'impossibilità in inserire pagine web funzionanti in scena</li>
             <li>Supporto dispositivi (OS/browser) altalenante: https://webvr.rocks/</li>
           </ul>
         </div>
       </div>
+      <div class="row">
+        <footer class="col-xs-12">
+          <p>Mattia</p>
+        </footer>
+      </div>
     </div>
   
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-	<script src="../js/jquery-1.11.3.min.js"></script>
-
-	<!-- Include all compiled plugins (below), or include individual files as needed --> 
-	<script src="../js/bootstrap.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed --> 
+    <script src="../js/bootstrap.js"></script>
+    
   </body>
 </html>
