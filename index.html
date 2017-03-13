@@ -30,6 +30,8 @@
         <img id="cubesThumb" src="img/cubesThumb.png">
         <img id="secheltPhoto" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg">
         <img id="secheltThumb" src="img/secheltThumb.png">
+        <a-asset-item id="lonkObj" src="models/Creature.obj"></a-asset-item>
+          <a-asset-item id="lonkMtl" src="models/materials/Creature.mtl"></a-asset-item>
         <script id="cubo" type="text/html">
           <a-entity class="link"
             geometry="primitive: box;"
@@ -61,6 +63,8 @@
       
       <a-entity geometry="primitive: plane; width: 2; height: 2;" position="0 6 -7" material="shader: html; target: #target"></a-entity>
       <a-entity geometry="primitive: plane; width: 2; height: 2;" position="0 2 -7" material="shader: html; target: #container; ratio: width;"></a-entity>
+      
+      <a-entity obj-model="obj: #lonkObj; mtl: #lonkMtl"></a-entity>
       
       <a-light type="ambient" color="#445451"></a-light>
       <a-light type="point" intensity="2" position="2 4 4"></a-light>
