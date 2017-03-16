@@ -1,0 +1,115 @@
+<!doctype html>
+<html> 
+  <head>
+    <style>
+      #target, #container {
+        width: 512px;
+        height: 512px;
+        position: absolute;
+      }
+
+      #container {
+        top: 0;
+        left: 0;
+        background-color: yellow;
+        z-index: -1;
+      }
+    </style>
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-layout-component@4.0.2/dist/aframe-layout-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@^3.0.0/dist/aframe-event-set-component.min.js"></script>
+    <script src="js/aframe-image-set-component.js"></script>
+    <!-- <script src="https://unpkg.com/aframe-click-drag-component"></script> -->
+    <script src="https://rawgit.com/mayognaise/aframe-html-shader/master/dist/aframe-html-shader.min.js"></script>
+    <!-- <script>
+      window.aframeDraggableComponent(window.AFRAME);
+    </script> --> 
+  </head>
+
+  <body>
+  
+    <!-- Tag che prepara la "scena", un canvas pre-configurato per WebVR -->
+    <a-scene>
+     
+      <!-- Asset Manager, permette di precaricare nella cache del browser asset come immagini, video o altro da usare in scena. ATTENZIONE: Va appeso alla scena, funziona anche se esterno alla scena ma la console poi piange -->
+      <a-assets>
+        <audio src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav" autoplay preload></audio>
+        <img id="textureCubo" src="https://i.imgur.com/mYmmbrp.jpg" />
+        <img id="textureTerreno" src="https://cdn.aframe.io/a-painter/images/floor.jpg" />
+        <img id="cityPhoto" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg">
+        <img id="cityThumb" src="img/cityThumb.png">
+        <img id="cubesPhoto" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/cubes.jpg">
+        <img id="cubesThumb" src="img/cubesThumb.png">
+        <img id="secheltPhoto" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg">
+        <img id="secheltThumb" src="img/secheltThumb.png">
+        <script id="cubo" type="text/html">
+          <a-entity class="link"
+            geometry="primitive: box;"
+            material="shader: flat; src: ${thumb}"
+            sound="on: click; src: #clickSound"
+            event-set__1="_event: mousedown; scale: 1 1 1"
+            event-set__2="_event: mouseup; scale: 1.2 1.2 1.2"
+            event-set__3="_event: mouseenter; scale: 1.2 1.2 1.2"
+            event-set__4="_event: mouseleave; scale: 1 1 1"></a-entity>
+        </script>        
+      </a-assets> 
+      
+      <a-sky id="image360" radius="20" src="#cityPhoto"></a-sky>
+      
+      <a-entity position="0 1 0" rotation="0 135 0" layout="type: circle; radius: 5">
+        <a-entity template="src: #cubo" data-thumb="#textureCubo"></a-entity>
+        <a-entity template="src: #cubo" data-thumb="#cityThumb" image-set="on: click; target: #image360; src: #cityPhoto"></a-entity>
+        <a-entity template="src: #cubo" data-thumb="#cubesThumb" image-set="on: click; target: #image360; src: #cubesPhoto"></a-entity>
+        <a-entity template="src: #cubo" data-thumb="#secheltThumb" image-set="on: click; target: #image360; src: #secheltPhoto"></a-entity>
+        <a-entity></a-entity>
+        <a-entity></a-entity>
+        <a-entity></a-entity>
+        <a-entity></a-entity>
+        <a-entity></a-entity>
+        <a-entity></a-entity>
+        <a-entity></a-entity>
+        <a-entity></a-entity>
+      </a-entity>
+      
+      <a-entity geometry="primitive: plane; width: 2; height: 2;" position="0 6 -7" material="shader: html; target: #target"></a-entity>
+      <a-entity geometry="primitive: plane; width: 2; height: 2;" position="0 2 -7" material="shader: html; target: #container; ratio: width;"></a-entity>
+      
+      <a-entity position="-4 4 -6" scale="0.1 0.1 0.1" rotation="-90 22.5 0" obj-model="obj: #lonkObj; mtl: #lonkMtl">
+        <a-animation attribute="position" to="-4 4.2 -6" direction="alternate" dur="2000" repeat="indefinite"></a-animation>
+      </a-entity>
+      
+      <a-light type="ambient" color="#445451"></a-light>
+      <a-light type="point" intensity="1" position="2 4 4" color="#8080ff"></a-light>
+      
+      <a-text value="Hello Fabio!" color="#000" position="-0.9 0.2 -3" scale="1.5 1.5 1.5"></a-text>
+      
+      <a-camera>
+        <a-cursor id="cursor" material="color: white; shader: flat">
+          <a-animation begin="click" easing="ease-in" attribute="scale" fill="backwards" from="0.1 0.1 0.1" to="1 1 1" dur="150"></a-animation>
+          <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" from="1 1 1" to="0.1 0.1 0.1" dur="1500"></a-animation>
+        </a-cursor>
+      </a-camera>
+      
+    </a-scene>
+    
+    <iframe id="target" src="https://www.google.it"></iframe>
+    
+    <div id="container">
+      <div id="testo">
+        <h1>Titolo di prova</h1>
+        <p><a href="www.google.it" target="_blank">Link google</a></p>
+      </div>
+    </div>
+     
+    
+    
+    <!-- Per comodità in dev i Component possono essere scritti in testa al body ma per rimanere fedeli dalle norme HTML5 lo pongo in fondo al body, almeno sono certo che la scena funzioni (ed è modulare, essendo un component, e molto più controllabile) -->
+    <!-- <script src="js/cubeScale.acomponent.js"></script> -->
+    
+    <!-- JS scritto come da norme dopo l'HTML, ma per una scena VR è lento e incontrollabile -->   
+    <!-- <script src="js/animation.js"></script> -->
+        
+  </body>
+
+</html>
