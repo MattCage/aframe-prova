@@ -43,6 +43,7 @@
         <img id="cubesThumb" src="img/cubesThumb.png">
         <img id="secheltPhoto" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg">
         <img id="secheltThumb" src="img/secheltThumb.png">
+        <video id="provaVideo" src="videos/video.mp4">
         <script id="cubo" type="text/html">
           <a-entity class="link"
             geometry="primitive: box;"
@@ -58,7 +59,7 @@
       <a-sky id="image360" radius="20" src="#cityPhoto"></a-sky>
       
       <a-entity position="0 1 0" rotation="0 135 0" layout="type: circle; radius: 5">
-        <a-entity template="src: #cubo" data-thumb="#textureCubo"></a-entity>
+        <a-entity template="src: #provaVideo" data-thumb="#textureCubo"></a-entity>
         <a-entity template="src: #cubo" data-thumb="#cityThumb" image-set="on: click; target: #image360; src: #cityPhoto"></a-entity>
         <a-entity template="src: #cubo" data-thumb="#cubesThumb" image-set="on: click; target: #image360; src: #cubesPhoto"></a-entity>
         <a-entity template="src: #cubo" data-thumb="#secheltThumb" image-set="on: click; target: #image360; src: #secheltPhoto"></a-entity>
