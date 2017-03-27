@@ -1,5 +1,5 @@
 <!doctype html>
-<html> 
+<html>
   <head>
     <style>
       #target, #container {
@@ -24,14 +24,14 @@
     <script src="https://rawgit.com/mayognaise/aframe-html-shader/master/dist/aframe-html-shader.min.js"></script>
     <!-- <script>
       window.aframeDraggableComponent(window.AFRAME);
-    </script> --> 
+    </script> -->
   </head>
 
   <body>
-  
+
     <!-- Tag che prepara la "scena", un canvas pre-configurato per WebVR -->
     <a-scene>
-     
+
       <!-- Asset Manager, permette di precaricare nella cache del browser asset come immagini, video o altro da usare in scena. ATTENZIONE: Va appeso alla scena, funziona anche se esterno alla scena ma la console poi piange -->
       <a-assets>
         <audio src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav" autoplay preload></audio>
@@ -54,11 +54,11 @@
             event-set__2="_event: mouseup; scale: 1.2 1.2 1.2"
             event-set__3="_event: mouseenter; scale: 1.2 1.2 1.2"
             event-set__4="_event: mouseleave; scale: 1 1 1"></a-entity>
-        </script>        
-      </a-assets> 
-      
+        </script>
+      </a-assets>
+
       <a-sky id="image360" radius="20" src="#cityPhoto"></a-sky>
-      
+
       <a-entity position="0 1 0" rotation="0 135 0" layout="type: circle; radius: 5">
         <a-entity template="src: #cubo" data-thumb="#textureCubo"></a-entity>
         <a-entity template="src: #cubo" data-thumb="#cityThumb" image-set="on: click; target: #image360; src: #cityPhoto"></a-entity>
@@ -73,45 +73,45 @@
         <a-entity></a-entity>
         <a-entity></a-entity>
       </a-entity>
-      
+
       <a-entity geometry="primitive: plane; width: 2; height: 2;" position="0 6 -7" material="shader: html; target: #target"></a-entity>
       <a-entity geometry="primitive: plane; width: 2; height: 2;" position="0 2 -7" material="shader: html; target: #container; ratio: width;"></a-entity>
-      
-      <a-entity position="-4 4 -6" scale="0.1 0.1 0.1" rotation="-90 22.5 0" obj-model="obj: #lonkObj; mtl: #lonkMtl">
+
+      <!--<a-entity position="-4 4 -6" scale="0.1 0.1 0.1" rotation="-90 22.5 0" obj-model="obj: #lonkObj; mtl: #lonkMtl">
         <a-animation attribute="position" to="-4 4.2 -6" direction="alternate" dur="2000" repeat="indefinite"></a-animation>
-      </a-entity>
-      
+      </a-entity>-->
+
       <a-light type="ambient" color="#445451"></a-light>
       <a-light type="point" intensity="1" position="2 4 4" color="#8080ff"></a-light>
-      
+
       <a-text value="Hello Fabio!" color="#000" position="-0.9 0.2 -3" scale="1.5 1.5 1.5"></a-text>
-      
+
       <a-camera>
         <a-cursor id="cursor" material="color: white; shader: flat">
           <a-animation begin="click" easing="ease-in" attribute="scale" fill="backwards" from="0.1 0.1 0.1" to="1 1 1" dur="150"></a-animation>
           <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" from="1 1 1" to="0.1 0.1 0.1" dur="1500"></a-animation>
         </a-cursor>
       </a-camera>
-      
+
     </a-scene>
-    
+
     <iframe id="target" src="http://www.anotherealityvr.com"></iframe>
-    
+
     <div id="container">
       <div id="testo">
         <h1>Titolo di prova</h1>
         <p><a href="www.google.it" target="_blank">Link google</a></p>
       </div>
     </div>
-     
-    
-    
+
+
+
     <!-- Per comodità in dev i Component possono essere scritti in testa al body ma per rimanere fedeli dalle norme HTML5 lo pongo in fondo al body, almeno sono certo che la scena funzioni (ed è modulare, essendo un component, e molto più controllabile) -->
     <!-- <script src="js/cubeScale.acomponent.js"></script> -->
-    
-    <!-- JS scritto come da norme dopo l'HTML, ma per una scena VR è lento e incontrollabile -->   
+
+    <!-- JS scritto come da norme dopo l'HTML, ma per una scena VR è lento e incontrollabile -->
     <!-- <script src="js/animation.js"></script> -->
-        
+
   </body>
 
 </html>
